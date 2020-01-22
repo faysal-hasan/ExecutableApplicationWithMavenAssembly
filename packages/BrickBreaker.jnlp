@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="BrickBreaker.jnlp">
+  <information>
+    <title>BDemo</title>
+    <vendor>Unknown</vendor>
+    <description>BrickBreaker</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Xmx128m -Xms128m "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="t.jar" size="15738270" download="null" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="com.mfh.test.Main"  name="BrickBreaker" />
+  <update check="background"/>
+</jnlp>

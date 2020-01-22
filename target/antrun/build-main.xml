@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <zip basedir="D:\Projects\JavaFX\Executable Application\target/Executable-Application-bin/Executable-Application" excludes="**/jre/**/*" destfile="D:\Projects\JavaFX\Executable Application\target/Executable-Application-1.0-SNAPSHOT.zip"></zip>
+  <zip basedir="D:\Projects\JavaFX\Executable Application\target/Executable-Application-bin/Executable-Application" destfile="D:\Projects\JavaFX\Executable Application\target/Executable-Application-1.0-SNAPSHOT-windows.zip"></zip>
+</target>
+</project>

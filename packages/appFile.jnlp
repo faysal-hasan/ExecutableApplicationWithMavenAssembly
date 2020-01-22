@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="appFile.jnlp">
+  <information>
+    <title>The application name</title>
+    <vendor>Unknown</vendor>
+    <description>appName</description>
+    <offline-allowed/>
+  <shortcut><desktop/></shortcut>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="t.jar" size="15738270" download="null" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="com.mfh.test.Main"  name="appName" />
+  <update check="background"/>
+</jnlp>

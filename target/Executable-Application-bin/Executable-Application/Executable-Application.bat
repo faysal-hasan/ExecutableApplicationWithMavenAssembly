@@ -1,0 +1,1 @@
+java -cp "Executable-Application.jar;lib\*;" com.mfh.test.Main

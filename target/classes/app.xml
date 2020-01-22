@@ -1,0 +1,75 @@
+<assembly>
+  <id>bin</id>
+  <!-- <formats> <format>jar</format> <format>tar.gz</format> <format>zip</format> <format>tar</format> </formats> -->
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <baseDirectory>${project.build.finalName}</baseDirectory>
+
+  <formats>
+    <format>dir</format>
+  </formats>
+
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>lib</outputDirectory>
+      <unpack>false</unpack>
+      <excludes>
+        <exclude>${project.groupId}:${project.artifactId}</exclude>
+      </excludes>
+    </dependencySet>
+  </dependencySets>
+
+  <fileSets>
+<!--    &lt;!&ndash; <fileSet> <directory>src</directory> <outputDirectory>src</outputDirectory> </fileSet> &ndash;&gt;-->
+<!--    <fileSet>-->
+<!--      <directory>src/main/resources/images</directory>-->
+<!--      <outputDirectory>images</outputDirectory>-->
+<!--    </fileSet>-->
+<!--    <fileSet>-->
+<!--      <directory>src/main/resources/icons</directory>-->
+<!--      <outputDirectory>icons</outputDirectory>-->
+<!--    </fileSet>-->
+    <!-- <fileSet>
+        <directory>plugins</directory>
+        <outputDirectory>plugins</outputDirectory>
+        <filtered>false</filtered>
+        <includes>
+            <include>README</include>
+        </includes>
+    </fileSet> -->
+
+<!--    <fileSet>-->
+<!--      <directory>i18n</directory>-->
+<!--      <outputDirectory>i18n</outputDirectory>-->
+<!--      <includes>-->
+<!--        <include>*.properties</include>-->
+<!--      </includes>-->
+<!--    </fileSet>-->
+
+<!--    <fileSet>-->
+<!--      <directory></directory>-->
+<!--      <outputDirectory></outputDirectory>-->
+<!--      <filtered>false</filtered>-->
+<!--      <includes>-->
+<!--        <include>${project.artifactId}.exe</include>-->
+<!--      </includes>-->
+<!--    </fileSet>-->
+    <!-- <fileSet> <directory>resources</directory> <outputDirectory>resources</outputDirectory> </fileSet> -->
+
+    <!-- The following part will create a jar file that will be used to run our application -->
+  <fileSet>
+      <directory>target</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>${project.build.finalName}.jar</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <files>
+    <file>
+    <filtered>true</filtered>
+    <source>src/main/resources/${project.build.finalName}.bat</source>
+    <outputDirectory>./</outputDirectory>
+    <destName>${project.build.finalName}.bat</destName>
+  </file>
+  </files>
+</assembly>
