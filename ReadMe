@@ -1,0 +1,40 @@
+Source: https://www.baeldung.com/executable-jar-with-maven
+# Apache Maven Assembly Plugin
+The Apache Maven Assembly Plugin allows users to aggregate the project output along with its dependencies, modules, site documentation, and other files into a single, runnable package.
+
+The main goal in the assembly plugin is the single goal – used to create all assemblies (all other goals are deprecated and will be removed in a future release).
+
+Let's take a look at the configuration in pom.xml:
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+            <configuration>
+                <archive>
+                <manifest>
+                    <mainClass>
+                        org.baeldung.executable.ExecutableMavenJar
+                    </mainClass>
+                </manifest>
+                </archive>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+Similarly to the manual approach, we need to provide the information about the main class; the difference is that the Maven Assembly Plugin will automatically copy all required dependencies into a jar file.
+
+In the descriptorRefs part of the configuration code, we provided the name, that will be added to the project name.
+
+Output in our example will be named as core-java-jar-with-dependencies.jar.
+
+pros – dependencies inside the jar file, one-file only
+cons – basic control of packaging your artifact, for example, there is no class relocation support
